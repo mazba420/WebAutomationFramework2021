@@ -195,19 +195,19 @@ public void windowsPageScrollToLocator(WebElement element) {
             if (OS.equalsIgnoreCase("OS X")) {
                 WebDriverManager.chromedriver().setup();
             } else if (OS.equalsIgnoreCase("windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
+                WebDriverManager.chromedriver().setup();
             }
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/mac/geckodriver");
+               WebDriverManager.firefoxdriver().setup();
             } else if (OS.equalsIgnoreCase("windows")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/windows/geckodriver.exe");
+                WebDriverManager.firefoxdriver().setup();
             }
             driver = new FirefoxDriver();
         } else if (browserName.equalsIgnoreCase("ie")) {
             if (OS.equalsIgnoreCase("windows")) {
-                System.setProperty("webdriver.ie.driver", "../Generic/BrowserDriver/windows/IEDriverServer.exe");
+                WebDriverManager.iedriver().setup();
             }
             driver = new InternetExplorerDriver();
         }
