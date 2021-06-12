@@ -4,14 +4,12 @@ import com.relevantcodes.extentreports.LogStatus;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -27,8 +25,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -243,4 +243,71 @@ public class TestBase {
     public void typeOnXpath(String xpath, String data) {
         driver.findElement(By.xpath(xpath)).sendKeys(data);
     }
+
+
+
+
+
+
+
+
+
+
+    /*
+    This is drop down Util
+     */
+
+
+    public static void selectByVisibleText(WebElement element, String text) {
+        Select select = new Select(element);
+        select.selectByVisibleText(text);
+    }
+
+    public static void selectByValue(WebElement element, String text) {
+        Select select = new Select(element);
+        select.selectByValue(text);
+    }
+
+    public static void selectByIndex(WebElement element, int indexNumber) {
+        Select select = new Select(element);
+        select.selectByIndex(indexNumber);
+    }
+
+    public static List<String> allOptionFromSelectDropDown(WebElement element) {
+        Select select = new Select(element);
+        List<WebElement> listAllOption = select.getOptions();
+
+        List<String> optionValueList = new ArrayList<String>();
+
+        for (WebElement webElement : listAllOption) {
+            String options = webElement.getText();
+            optionValueList.add(options);
+        }
+        return optionValueList;
+
+    }
+
+
+    public static void selectValueFromDropDown(WebElement element, String text) {
+        Select select = new Select(element);
+        List<WebElement> listAllOption = select.getOptions();
+
+        List<String> optionValueList = new ArrayList<String>();
+
+        for (WebElement allOptions : listAllOption) {
+            String options = allOptions.getText();
+            if (options.equals(text)) {
+                allOptions.click();
+                break;
+            }
+        }
+    }
+
+
+    public static boolean multiSelectionDropDown(WebElement locator){
+        Select select = new Select(locator);
+        boolean multiSelectionDrop = select.isMultiple();
+        return multiSelectionDrop ;
+    }
+
 }

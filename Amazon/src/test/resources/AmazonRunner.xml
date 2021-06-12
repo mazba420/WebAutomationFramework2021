@@ -14,7 +14,9 @@
 
         <classes>
 
-            <class name="com.amazon.tests.SearchTest"></class>
+<!--            <class name="com.amazon.tests.SearchTest"></class>-->
+<!--            <class name="com.amazon.tests.RegistrationTest"></class>-->
+            <class name="com.amazon.tests.MenuOptionsTest"></class>
 
         </classes>
     </test>

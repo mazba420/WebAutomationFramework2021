@@ -12,10 +12,6 @@ public class SearchTest extends TestBase {
 
     private static final Logger logger = Logger.getLogger(SearchTest.class);
 
-
-
-
-
     @Test(dataProviderClass = DataProviderTest.class,dataProvider = "getDataForSearchTest")
     public void validateUserSearchAnItem(String productName){
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
