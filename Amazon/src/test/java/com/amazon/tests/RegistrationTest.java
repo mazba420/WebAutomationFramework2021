@@ -27,9 +27,6 @@ public class RegistrationTest extends TestBase {
         registrationPage.UserReEnterPass(reEnterPass);
         ExtentTestManager.log(reEnterPass+" Enter successfully",logger);
         sleepFor(5);
-
-
-
     }
 
     @Test
@@ -37,8 +34,8 @@ public class RegistrationTest extends TestBase {
         RegistrationPage registrationPage = PageFactory.initElements(driver,RegistrationPage.class);
         registrationPage.clickObSignInButton();
         registrationPage.clickAmazonAccountlink();
-       String expectedText = registrationPage.createAccountText();
-       String actualText = "Create account";
+        String expectedText = registrationPage.createAccountText();
+        String actualText = "Create account";
         Assert.assertEquals(expectedText,actualText,"Text did not match");
         ExtentTestManager.log("Create account Page text find properly",logger);
     }

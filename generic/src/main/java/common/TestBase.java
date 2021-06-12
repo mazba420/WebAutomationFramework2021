@@ -310,4 +310,51 @@ public class TestBase {
         return multiSelectionDrop ;
     }
 
+
+
+
+
+    /*
+    ***********************************Java Script*********
+
+     */
+
+    public JavascriptExecutor jscript;
+
+    public void windowsFullPageScrollDown() {
+        jscript = (JavascriptExecutor) driver;
+        jscript.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
+    public void windowsFullPageScrollUp() {
+        jscript = (JavascriptExecutor) driver;
+        jscript.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
+    }
+
+    public void windowsFullPageScrollSideBar(WebElement element) {
+        jscript = (JavascriptExecutor) driver;
+        jscript.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+    public void windowsPageScrollToLocator(WebElement element) {
+        jscript = (JavascriptExecutor) driver;
+        jscript.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void windowTwoThirdPageScroll() {
+        jscript = (JavascriptExecutor) driver;
+        jscript.executeScript("window.scrollBy(0,950)", "");
+    }
+
+    public void windowHalfPageScroll() {
+        jscript = (JavascriptExecutor) driver;
+        jscript.executeScript("window.scrollBy(0,350)", "");
+
+    }
+
+    public void windowHalfPageScrollUp() {
+        jscript = (JavascriptExecutor) driver;
+        jscript.executeScript("window.scrollBy(0,-350)", "");
+    }
+
+
 }
