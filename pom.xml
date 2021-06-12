@@ -11,6 +11,7 @@
     <modules>
         <module>generic</module>
         <module>ebay</module>
+        <module>Flipkart</module>
     </modules>
 
     <properties>

@@ -28,7 +28,8 @@
     <test name="ebay test">
 
         <classes>
-            <class name="homepagetest.HomePageHeaderTest"></class>
+<!--            <class name="homepagetest.HomePageHeaderTest"></class>-->
+            <class name="homepagetest.SearchTest"></class>
 
         </classes>
     </test>

@@ -34,12 +34,21 @@ public class HomePageHeader extends WebAPI {
         helpAndContactLink.click();
     }
 
-   public void ebayLogo(){
-        ebayLogo.isDisplayed();
+   public boolean ebayLogo(){
+       return ebayLogo.isDisplayed();
    }
 
    public String validateDailyDealsLink(){
          return dailyDealsLink.getText();
    }
+
+   public String validateBrandOutLinkTitle(){
+        return brandOutletLink.getText();
+   }
+
+
+
+
+
 
 }
