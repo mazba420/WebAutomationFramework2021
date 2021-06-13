@@ -17,7 +17,8 @@
 <!--            <class name="com.amazon.tests.SearchTest"></class>-->
 <!--            <class name="com.amazon.tests.RegistrationTest"></class>-->
 <!--            <class name="com.amazon.tests.MenuOptionsTest"></class>-->
-            <class name="com.amazon.tests.FotterPageTest"></class>
+<!--            <class name="com.amazon.tests.FooterPageTest"></class>-->
+            <class name="com.amazon.tests.ShopByDepartmentTest"></class>
 
         </classes>
     </test>

@@ -17,26 +17,26 @@ public class MenuOptionsTest extends TestBase {
 
 
 
-    @Test(priority = 1,description = "verifying amazon option Test")
-    @Severity(SeverityLevel.NORMAL)
-    @Description("Test case Description verify all option")
-    @Story("Story Name : All option check")
-    public void validateMenuOptionTest(){
-        MenuOption menuOption = PageFactory.initElements(driver,MenuOption.class);
-        menuOption.validateMobileApp();
-        ExtentTestManager.log("All option selected Successfully",logger);
+//    @Test(priority = 1,description = "verifying amazon option Test")
+//    @Severity(SeverityLevel.NORMAL)
+//    @Description("Test case Description verify all option")
+//    @Story("Story Name : All option check")
+//    public void validateMenuOptionTest(){
+//        MenuOption menuOption = PageFactory.initElements(driver,MenuOption.class);
+//        menuOption.validateMobileApp();
+//        ExtentTestManager.log("All option selected Successfully",logger);
+//
+//    }
 
-    }
-
-    @Test(priority = 2,description = "check audioBook link display")
-    @Severity(SeverityLevel.NORMAL)
-    @Description("Test case Description verify audiobook")
-    @Story("Story Name : Audio book display test")
-    public void validateAllOptionsDisplayTest(){
-        MenuOption menuOption = PageFactory.initElements(driver,MenuOption.class);
-        Assert.assertTrue(  menuOption.optionsDisplay());
-        ExtentTestManager.log("AudioBook display",logger);
-    }
+//    @Test(priority = 2,description = "check audioBook link display")
+//    @Severity(SeverityLevel.NORMAL)
+//    @Description("Test case Description verify audiobook")
+//    @Story("Story Name : Audio book display test")
+//    public void validateAllOptionsDisplayTest(){
+//        MenuOption menuOption = PageFactory.initElements(driver,MenuOption.class);
+//        Assert.assertTrue(  menuOption.optionsDisplay());
+//        ExtentTestManager.log("AudioBook display",logger);
+//    }
 
 
 
