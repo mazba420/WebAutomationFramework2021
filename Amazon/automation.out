@@ -1,2 +1,6 @@
-2021-06-13 10:06:643 INFO  SearchTest:42 - User find as expected page
-2021-06-13 10:06:123 INFO  TestBase:240 - driver closed
+2021-06-14 11:06:485 INFO  SearchTest:42 - Get data from database
+2021-06-14 11:06:317 INFO  SearchTest:42 - iphone type on search bar
+2021-06-14 11:06:317 INFO  SearchTest:42 - javabooks type on search bar
+2021-06-14 11:06:318 INFO  SearchTest:42 - Laptop type on search bar
+2021-06-14 11:06:371 INFO  SearchTest:42 - Clicked on search bar
+2021-06-14 11:06:402 INFO  TestBase:244 - driver closed

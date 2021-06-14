@@ -1,6 +1,7 @@
 package common;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
+import databases.ConnectDB;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -23,6 +24,9 @@ import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -80,7 +84,7 @@ public class TestBase {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (platform.equalsIgnoreCase("windows") && browser.equalsIgnoreCase("chrome")) {
-           WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (platform.equalsIgnoreCase("mac") && browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
@@ -304,10 +308,10 @@ public class TestBase {
     }
 
 
-    public static boolean multiSelectionDropDown(WebElement locator){
+    public static boolean multiSelectionDropDown(WebElement locator) {
         Select select = new Select(locator);
         boolean multiSelectionDrop = select.isMultiple();
-        return multiSelectionDrop ;
+        return multiSelectionDrop;
     }
 
 
@@ -315,7 +319,7 @@ public class TestBase {
 
 
     /*
-    ***********************************Java Script*********
+     ***********************************Java Script*********
 
      */
 
@@ -335,6 +339,7 @@ public class TestBase {
         jscript = (JavascriptExecutor) driver;
         jscript.executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
     public void windowsPageScrollToLocator(WebElement element) {
         jscript = (JavascriptExecutor) driver;
         jscript.executeScript("arguments[0].scrollIntoView(true);", element);
@@ -356,5 +361,20 @@ public class TestBase {
         jscript.executeScript("window.scrollBy(0,-350)", "");
     }
 
+
+    //Database
+    public ArrayList connectToDataBaseAndGetData(String query, String columnName) throws SQLException {
+
+        Statement statement = ConnectDB.connection.createStatement();
+        ResultSet table = statement.executeQuery(query);
+        ArrayList<String> dataList = new ArrayList<>();
+
+        String data = "";
+        while (table.next()) {
+            data = table.getString(columnName);
+            dataList.add(data);
+        }
+        return dataList;
+    }
 
 }
