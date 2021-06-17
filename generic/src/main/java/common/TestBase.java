@@ -377,4 +377,10 @@ public class TestBase {
         return dataList;
     }
 
+
+    public String getTitle(){
+        return driver.getTitle();
+    }
+
+
 }

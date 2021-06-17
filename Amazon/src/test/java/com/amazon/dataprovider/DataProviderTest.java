@@ -14,6 +14,14 @@ public class DataProviderTest {
         };
     }
 
+    //For searchBox test data
+    @DataProvider(name ="getDataForSearchTestAndAddToCart")
+    public static Object [][] getSearchDataAndAddToCart(){
+        return new Object[][]{
+                {"Laptop"},
+        };
+    }
+
 
    //For registration Page test data
     @DataProvider(name ="getDataForRegistrationTest")

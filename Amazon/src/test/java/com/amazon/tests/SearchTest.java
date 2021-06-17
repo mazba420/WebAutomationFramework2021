@@ -19,7 +19,6 @@ public class SearchTest extends TestBase {
          ExtentTestManager.log(productName+" type on search bar",logger);
          searchPage.clickOnSearchButton();
          ExtentTestManager.log("Clicked on search bar",logger);
-
     }
 
 

@@ -25,9 +25,13 @@ public class ShopByDepartmentTest extends TestBase {
 
     @Test
     public void validateAddToCartTest(){
-        ShopByDepartment shopByDepartment = PageFactory.initElements(driver,ShopByDepartment.class);
-        shopByDepartment.addToCardTV();
-        ExtentTestManager.log("User successFully add to cart ",logger);
+         ShopByDepartment shopByDepartment = PageFactory.initElements(driver,ShopByDepartment.class);
+         shopByDepartment.addToCardTV();
+         String expectedTitle = getTitle();
+         String actualTitle ="Amazon Sign-In";
+         Assert.assertEquals(expectedTitle,actualTitle,"Title not match");
+         ExtentTestManager.log("User successFully add to cart ",logger);
+         ExtentTestManager.log("User successFully get Title ",logger);
     }
 
 

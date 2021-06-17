@@ -19,7 +19,8 @@
 <!--            <class name="com.amazon.tests.MenuOptionsTest"></class>-->
 <!--            <class name="com.amazon.tests.FooterPageTest"></class>-->
 <!--            <class name="com.amazon.tests.ShopByDepartmentTest"></class>-->
-            <class name="com.amazon.tests.SearchTestFromDataBase"></class>
+<!--            <class name="com.amazon.tests.SearchTestFromDataBase"></class>-->
+                <class name="com.amazon.tests.ProductSearchAndAddToCartTest"></class>
 
         </classes>
     </test>

@@ -21,6 +21,9 @@ public class ShopByDepartment extends TestBase {
     @FindBy(xpath = "(//div[@class='bxc-grid__image   bxc-grid__image--light'])[2]")
     private WebElement budget ;
 
+    @FindBy(xpath = "//div[contains(@class,'a-container')]//div[2]//div[1]//div[1]//div[1]//p[1]//a[1]//img[1]")
+    private WebElement tclTv;
+
     @FindBy(xpath = "//input[@id='add-to-cart-button']")
     private WebElement addToCartButton ;
 
@@ -44,6 +47,7 @@ public class ShopByDepartment extends TestBase {
     public void tvAndVideoButtonClick(){
        sleepFor(1);
         tVAndVideo.click();
+
     }
 
     public boolean handPickUPImage(){
@@ -56,10 +60,13 @@ public class ShopByDepartment extends TestBase {
        electricButtonClick();
        tvAndVideoButtonClick();
        budget.click();
+       tclTv.click();
        addToCartButton.click();
        noThanksButton.click();
        processToCheckOutButton.click();
     }
+
+
 
 
 
